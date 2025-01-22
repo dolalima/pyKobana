@@ -1,7 +1,6 @@
 import os
 import unittest
-
-from src import Kobana
+from pyKobana import Kobana
 
 
 class TestApiKobana(unittest.TestCase):
@@ -13,7 +12,7 @@ class TestApiKobana(unittest.TestCase):
         self.assertIsInstance(response, dict)
 
     def test_get(self):
-        response = self.client.post("wallets", data={"key": "value"})
+        response = self.client.doGet("/wallets", data={"key": "value"})
         self.assertIsInstance(response, dict)
 
 
